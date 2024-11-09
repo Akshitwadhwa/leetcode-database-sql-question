@@ -1,2 +1,24 @@
 Leet code Sql databaseas questuon..
 these are the solutiouns of the leetcode database questions which are done in the mysql language
+
+QUESTION 175-- COMBINING THE TWO TABLES
+To combine two tables we use the joins function, in this question specifically we will use the left join.
+The main difference we are not using full join as we have to take values from the table 1 which is the persons tabeel. We can see that there are only 1 common person id 
+in the given table but we need to print both the names given in the table so we will use left join. The mysql code is--
+
+select firstname,lastname, city, state
+from  Person left join Address
+on Person.PersonId = Address.PersonId;
+
+
+QUESTION 176. SECOND HIGHEST SALARY
+In this we have to find the second highest salary in the table which is calculated by using the max function twice.
+First we need to find the highest salray and remove it outside , then use the function again which will give the higest salary which will be the second highest salary
+The code is as follows--
+
+SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary NOT IN 
+( SELECT MAX(salary) AS max_salary FROM Employee)
+
+
+
+
