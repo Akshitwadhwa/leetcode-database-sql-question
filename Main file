@@ -20,5 +20,9 @@ SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary NOT IN
 ( SELECT MAX(salary) AS max_salary FROM Employee)
 
 
+QQUESTION 177. Nth Highest Salary
+In
+
+
 
 
