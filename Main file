@@ -12,7 +12,7 @@ on Person.PersonId = Address.PersonId;
 
 
 QUESTION 176. SECOND HIGHEST SALARY
-In this, we have to find the second highest salary in the table which is calculated by using the max function twice.
+In this, we have to find the second highest salary in the table which is calculated using the max function twice.
 First, we need to find the highest salary and remove it outside, then use the function again which will give the higest salary which will be the second highest salary
 The code is as follows--
 
@@ -21,7 +21,7 @@ SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN
 
 
 QUESTION 177. Nth Highest Salary
-In this, we have to find the nth highest salary in the given table which is an employee, salary table.
+In this, we have to find the nth highest salary in the given table, an employee salary table.
 The code for that is given below--
 
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
@@ -37,7 +37,26 @@ END
 
 
 QUESTION 178. RANK SCORES
-We have to rank the given table in order of highest to lowest, the question also demanded that the if the two numbers are equal they should be given the same rank.
+We have to rank the given table in order of highest to lowest, the question also demanded that if the two numbers are equal they should be given the same rank.so we will use  the 
+get dense rank function which will order them in descending order.CODE IS--
+
+SELECT score,
+    DENSE_RANK() OVER (ORDER BY score DESC) AS "rank"
+FROM Scores;
+
+
+QUESTION 180. CONSECUTIVE NUMBERS
+There is a list of numbers in a table which are getting repeated , we have to find those numbers which are getting repeated more than thrirce
+for that we will use the logs algorithm 
+
+
+
+
+
+
+
+
+
 
 
 
